@@ -1,0 +1,80 @@
+{
+  "name": "react-google-button",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "files": [
+    "src",
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib coverage",
+    "lint": "eslint -c .eslintrc ./src",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "mocha -R spec --compilers js:babel-core/register ./test/setup.js ./test/**/*.spec.js",
+    "test:cov": "babel-node $(npm bin)/isparta cover --report lcov ./node_modules/mocha/bin/_mocha -- ./test --recursive",
+    "build:lib": "babel src --out-dir lib",
+    "build:umd": "webpack src/index.js dist/react-google-button.js --config webpack-development.config.js",
+    "build:umd:min": "webpack -p src/index.js dist/react-google-button.min.js --config webpack-production.config.js",
+    "build": "npm run clean && npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "watch:umd": "npm run build:umd -- --stats --progress --colors --watch",
+    "watch:lib": "npm run build:lib -- --stats --progress --colors --watch",
+    "watch": "npm run watch:umd",
+    "prepublish": "npm run clean && npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prescottprue/react-google-button.git"
+  },
+  "keywords": [
+    "kyper",
+    "matter",
+    "tessellate",
+    "authentication",
+    "user",
+    "project management"
+  ],
+  "author": "prescottprue",
+  "contributors": [
+    {
+      "name": "prescottprue",
+      "email": "sprue.dev@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prescottprue/react-google-button/issues"
+  },
+  "homepage": "https://github.com/prescottprue/react-google-button",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "babel-core": "^6.7.7",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-dev-warning": "^0.1.0",
+    "babel-plugin-transform-react-constant-elements": "^6.5.0",
+    "babel-plugin-transform-react-inline-elements": "^6.6.5",
+    "babel-plugin-transform-react-remove-prop-types": "^0.2.6",
+    "babel-plugin-transform-replace-object-assign": "^0.2.1",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-runtime": "^6.6.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.0.1",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-config-standard-react": "^3.0.0",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-react": "^5.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "isparta": "^4.0.0",
+    "json-loader": "^0.5.4",
+    "mocha": "^2.4.5",
+    "rimraf": "^2.5.1",
+    "webpack": "^1.13.1"
+  }
+}
