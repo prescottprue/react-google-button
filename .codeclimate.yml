@@ -1,0 +1,25 @@
+languages:
+  JavaScript: true
+
+exclude_paths:
+- "lib/**"
+- "test/**"
+- "example/**"
+- "LICENSE"
+- "LICENSE.md"
+- "README.md"
+- "package.json"
+
+engines:
+  duplication:
+    enabled: true
+    exclude_fingerprints:
+    duplication:
+      enabled: true
+      config:
+        languages:
+          - javascript
+    eslint:
+      enabled: true
+    fixme:
+      enabled: true

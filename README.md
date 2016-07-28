@@ -13,12 +13,20 @@ react-google-button is universal, so it can be used client-side or server-side.
 
 1. Install through: `npm install --save react-google-button`
 
-2. Include and use `react-google-button`:
+2. Import GoogleButton from `react-google-button`:
 
     ```javascript
-  import Reactgooglebutton from 'react-google-button';
-  let react-google-button = new Reactgooglebutton();
+  import GoogleButton from 'react-google-button'
     ```
+3. Use GoogleButton component
+```javascript
+  <GoogleButton onClick={handleClick} />
+```
+
+**Preview:**
+
+![https://s3.amazonaws.com/prue-cdn/react-google-button/preview.png](https://s3.amazonaws.com/prue-cdn/react-google-button/preview.png)
+
 ## Testing/Coverage
 
 `npm run test` - Run unit tests
@@ -28,34 +36,8 @@ react-google-button is universal, so it can be used client-side or server-side.
 
 Build code before deployment by running `npm run build`. There are multiple options below for types of deployment, if you are unsure, checkout the Firebase section.
 
-
-
-### Tests
-
-`npm run test` - run tests
-`npm run test:cov` - run tests and generate coverage
-
-
 ### Travis
 Visit [travis](travis-ci.org) to enable your gihub repo. Builds settings can be changed in `.travis.yml`
-
-### Deployment
-
-#### AWS S3
-
-Selecting AWS S3 from the deploy options when running the generator adds deploy configs in `.travis.yml`.
-
-1. Get your AWS Key and Secret from the AWS Console Credentials page
-2. Set the following environment vars within the Travis-CI repo settings page:
-  * `AWS_KEY` - Your AWS key
-  * `AWS_SECRET` - Your AWS secret
-  * `S3_BUCKET` - Your S3 Bucket
-
-### Code Climate
-
-Visit [code climate dashboard](https://codeclimate.com/dashboard) to enable codeclimate for your repo on Github. Coverage will be sent automatically by Travis.
-
-Get the key from the settings->coverage page and place it in Travis environment variable as `CODE_CLIMATE`
 
 
 ## [Documentation](https://prescottprue.github.com/react-google-button)
@@ -69,7 +51,7 @@ Get the key from the settings->coverage page and place it in Travis environment 
 [climate-image]: https://img.shields.io/codeclimate/github/prescottprue/react-google-button.svg?style=flat-square
 [climate-url]: https://codeclimate.com/github/prescottprue/react-google-button
 [coverage-image]: https://img.shields.io/codeclimate/coverage/github/prescottprue/react-google-button.svg?style=flat-square
-[coverage-url]: https://codeclimate.com/github/prescottprue/react-google-button 
+[coverage-url]: https://codeclimate.com/github/prescottprue/react-google-button
 [license-image]: https://img.shields.io/npm/l/react-google-button.svg?style=flat-square
 [license-url]: https://github.com/prescottprue/react-google-button/blob/master/LICENSE
 [code-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
