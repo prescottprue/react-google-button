@@ -5,8 +5,7 @@ var pkg = require('./package.json')
 module.exports = {
   module: {
     loaders: [
-      { test: /\.js$/, loaders: [ 'babel' ], exclude: [ /node_modules/ ] },
-      { test: /\.json$/, loaders: [ 'json' ], exclude: [] }
+      { test: /\.js$/, loaders: [ 'babel' ], exclude: [ /node_modules/ ] }
     ]
   },
   plugins: [

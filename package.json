@@ -21,7 +21,8 @@
     "watch:umd": "npm run build:umd -- --stats --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --stats --progress --colors --watch",
     "watch": "npm run watch:umd",
-    "prepublish": "npm run clean && npm run test && npm run build"
+    "prepublish": "npm run clean && npm run lint:fix && npm run build && npm run test:cov",
+    "prepush": "npm run lint:fix"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,11 @@
   },
   "homepage": "https://github.com/prescottprue/react-google-button",
   "dependencies": {},
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-tap-event-plugin": "^1.0.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
@@ -72,7 +78,6 @@
     "eslint-plugin-react": "^5.0.1",
     "eslint-plugin-standard": "^2.0.0",
     "isparta": "^4.0.0",
-    "json-loader": "^0.5.4",
     "mocha": "^2.4.5",
     "rimraf": "^2.5.1",
     "webpack": "^1.13.1"
