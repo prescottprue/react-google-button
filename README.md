@@ -13,23 +13,25 @@ react-google-button is universal, so it can be used client-side or server-side.
 
 1. Install through: `npm install --save react-google-button`
 
-2. Import GoogleButton from `react-google-button`:
+2. Import `GoogleButton` from `react-google-button`:
 
     ```javascript
   import GoogleButton from 'react-google-button'
     ```
-3. Use GoogleButton component
-```javascript
-  <GoogleButton onClick={handleClick} />
-```
+3. Use `GoogleButton` component:
 
-**Preview:**
+  ```javascript
+    <GoogleButton onClick={() => { console.log('button clicked') }} />
+  ```
+
+## Preview
 
 ![https://s3.amazonaws.com/prue-cdn/react-google-button/preview.png](https://s3.amazonaws.com/prue-cdn/react-google-button/preview.png)
 
 ## Testing/Coverage
 
 `npm run test` - Run unit tests
+
 `npm run test:cov` - Run unit tests and report coverage
 
 ## Building Bundle
@@ -38,9 +40,6 @@ Build code before deployment by running `npm run build`. There are multiple opti
 
 ### Travis
 Visit [travis](travis-ci.org) to enable your gihub repo. Builds settings can be changed in `.travis.yml`
-
-
-## [Documentation](https://prescottprue.github.com/react-google-button)
 
 [npm-image]: https://img.shields.io/npm/v/react-google-button.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-google-button

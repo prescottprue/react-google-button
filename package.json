@@ -1,6 +1,6 @@
 {
   "name": "react-google-button",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "files": [
@@ -50,8 +50,8 @@
   "homepage": "https://github.com/prescottprue/react-google-button",
   "dependencies": {},
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
