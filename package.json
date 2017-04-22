@@ -48,7 +48,9 @@
     "url": "https://github.com/prescottprue/react-google-button/issues"
   },
   "homepage": "https://github.com/prescottprue/react-google-button",
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
