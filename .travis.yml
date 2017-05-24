@@ -7,7 +7,13 @@ branches:
   only:
     - master
 
-script: npm run lint:fix
+script:
+  - npm run lint:fix
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
 addons:
   code_climate:

@@ -29,12 +29,11 @@
     "url": "https://github.com/prescottprue/react-google-button.git"
   },
   "keywords": [
-    "kyper",
-    "matter",
-    "tessellate",
-    "authentication",
-    "user",
-    "project management"
+    "google",
+    "react",
+    "react-button",
+    "firebase",
+    "google-firebase"
   ],
   "author": "prescottprue",
   "contributors": [
@@ -79,6 +78,8 @@
     "eslint-plugin-standard": "^2.0.0",
     "isparta": "^4.0.0",
     "mocha": "^2.4.5",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "rimraf": "^2.5.1",
     "webpack": "^1.13.1"
   }

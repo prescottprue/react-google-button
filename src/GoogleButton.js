@@ -8,6 +8,7 @@ const style = {
   border: 'none',
   textAlign: 'center',
   verticalAlign: 'center',
+  boxShadow: '0 2px 4px 0 rgba(0,0,0,.25)',
   fontSize: '16px',
   lineHeight: '48px',
   display: 'block',
@@ -38,10 +39,31 @@ const svgStyle = {
   display: 'block'
 }
 
+const hoverStyle = {
+  boxShadow: '0 0 3px 3px rgba(66,133,244,.3)',
+  backgroundColor: '#4285F4',
+  transition: 'background-color .218s, border-color .218s, box-shadow .218s'
+}
+
+const pressedStyle = {
+  backgroundColor: '#3367D6'
+}
+
 export default class GoogleButton extends Component {
+  state = {
+    hovered: false
+  }
+
+  getStyle = () => {
+    if (this.state.hovered) {
+      return { ...style, ...hoverStyle }
+    }
+    return style
+  }
+
   render () {
     return (
-      <div {...this.props} style={style}>
+      <div {...this.props} style={this.getStyle()} onMouseOver={() => this.setState({ hovered: true })} onMouseOut={() => this.setState({ hovered: false })}>
         <div style={iconStyle}>
           <div style={svgWrapperStyle}>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" style={svgStyle}>
