@@ -23,7 +23,7 @@ module.exports = {
     }
   },
   output: {
-    library: 'GoogleButton',
+    library: 'ReactGoogleButton',
     libraryTarget: 'umd',
     publicPath: '/dist/'
   },

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 const style = {
   backgroundColor: '#4285f4',
@@ -45,9 +45,14 @@ const hoverStyle = {
   transition: 'background-color .218s, border-color .218s, box-shadow .218s'
 }
 
-const pressedStyle = {
-  backgroundColor: '#3367D6'
-}
+// const pressedStyle = {
+//   backgroundColor: '#3367D6'
+// }
+
+// const disabledStyle = {
+//   backgroundColor: 'rgba(0, 0, 0, 8)',
+//   color: 'rgba(0, 0, 0, 40)'
+// }
 
 export default class GoogleButton extends Component {
   state = {
@@ -58,6 +63,9 @@ export default class GoogleButton extends Component {
     if (this.state.hovered) {
       return { ...style, ...hoverStyle }
     }
+    // if (this.props.disabled) {
+    //   return { ...style, ...disabledStyle }
+    // }
     return style
   }
 
