@@ -53,7 +53,8 @@ const hoverStyle = {
 
 const disabledStyle = {
   backgroundColor: 'rgba(0, 0, 0, .08)',
-  color: 'rgba(0, 0, 0, .40)'
+  color: 'rgba(0, 0, 0, .40)',
+  cursor: 'not-allowed'
 }
 
 const defaultSvg = (
@@ -71,12 +72,14 @@ const defaultSvg = (
 export default class GoogleButton extends Component {
   static propTypes = {
     label: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func
   }
 
   static defaultProps = {
     label: 'Sign in with Google',
-    disabled: false
+    disabled: false,
+    onClick: () => {}
   }
 
   state = {
@@ -93,15 +96,41 @@ export default class GoogleButton extends Component {
     return style
   }
 
+  mouseOver = () => {
+    if (!this.props.disabled) {
+      this.setState({ hovered: true })
+    }
+  }
+
+  mouseOut = () => {
+    if (!this.props.disabled) {
+      this.setState({ hovered: false })
+    }
+  }
+
+  click = (e) => {
+    if (!this.props.disabled) {
+      this.props.onClick(e)
+    }
+  }
+
   render () {
     const { label } = this.props
 
     return (
-      <div {...this.props} style={this.getStyle()} onMouseOver={() => this.setState({ hovered: true })} onMouseOut={() => this.setState({ hovered: false })}>
+      <div
+        {...this.props}
+        onClick={this.click}
+        style={this.getStyle()}
+        onMouseOver={this.mouseOver}
+        onMouseOut={this.mouseOut}
+      >
         <div style={iconStyle}>
           <div style={svgWrapperStyle}>
             {defaultSvg}
           </div>
+          {/* <UseIcon /> */}
+          {/* <UseIcon2 /> */}
         </div>
         <span>{label}</span>
       </div>

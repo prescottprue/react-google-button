@@ -4,7 +4,7 @@ var pkg = require('./package.json')
 
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       { test: /\.js$/, loaders: [ 'babel-loader' ], exclude: [ /node_modules/ ] }
     ]
   },
