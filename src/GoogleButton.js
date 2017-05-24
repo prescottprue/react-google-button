@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 const style = {
   backgroundColor: '#4285f4',
@@ -55,6 +56,13 @@ const hoverStyle = {
 // }
 
 export default class GoogleButton extends Component {
+  static propTypes = {
+    label: PropTypes.string
+  };
+
+  static defaultProps = {
+    label: 'Sign in with Google'
+  };
   state = {
     hovered: false
   }
@@ -70,6 +78,8 @@ export default class GoogleButton extends Component {
   }
 
   render () {
+    const {label} = this.props
+
     return (
       <div {...this.props} style={this.getStyle()} onMouseOver={() => this.setState({ hovered: true })} onMouseOut={() => this.setState({ hovered: false })}>
         <div style={iconStyle}>
@@ -85,7 +95,7 @@ export default class GoogleButton extends Component {
             </svg>
           </div>
         </div>
-        <span>Sign in with Google</span>
+        <span>{label}</span>
       </div>
     )
   }
