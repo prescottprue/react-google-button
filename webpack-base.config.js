@@ -22,13 +22,14 @@ module.exports = {
       commonjs2: 'react',
       amd: 'react',
       root: 'React'
-    },
-    'prop-types': {
-      commonjs: 'prop-types',
-      commonjs2: 'prop-types',
-      amd: 'prop-types',
-      root: 'PropTypes'
     }
+    // Uncomment to not include prop-types in browser build
+    // 'prop-types': {
+    //   commonjs: 'prop-types',
+    //   commonjs2: 'prop-types',
+    //   amd: 'prop-types',
+    //   root: 'PropTypes'
+    // }
   },
   output: {
     library: 'ReactGoogleButton',
