@@ -8,14 +8,14 @@ const defaults = {
 }
 
 const disabledStyle = {
-  backgroundColor: 'rgba(0, 0, 0, .08)'
+  backgroundColor: 'rgba(37, 5, 5, .08)'
 }
 
 describe('react-google-button Library', () => {
   describe('exports a component', () => {
     expect(GoogleButton).to.exist
   })
-  describe('(Component) AddressForm', () => {
+  describe('Component', () => {
     let _component
 
     describe('Default Props', () => {
@@ -31,7 +31,7 @@ describe('react-google-button Library', () => {
       })
 
       it('Sets correct label text', () => {
-        const firstDiv = _component.find('div')
+        const firstDiv = _component.find('span')
         expect(firstDiv.first().text()).to.equal(defaults.label)
       })
 
@@ -61,7 +61,7 @@ describe('react-google-button Library', () => {
       })
 
       it('Sets correct label text', () => {
-        const firstDiv = _component.find('div')
+        const firstDiv = _component.find('span')
         expect(firstDiv.first().text()).to.equal(customLabel)
       })
     })
