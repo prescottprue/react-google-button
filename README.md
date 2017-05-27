@@ -7,6 +7,12 @@
 [![License][license-image]][license-url]
 [![Code Style][code-style-image]][code-style-url]
 
+## [Codepen Demo](https://codepen.io/prescottprue/pen/NjmeKM)
+
+## Rendered Preview
+
+![Preview Image](https://storage.googleapis.com/pruvit-968.appspot.com/react-google-button/preview.png)
+
 ## Getting Started
 
 react-google-button is universal, so it can be used client-side or server-side.
@@ -22,12 +28,84 @@ react-google-button is universal, so it can be used client-side or server-side.
 3. Use `GoogleButton` component:
 
   ```javascript
-    <GoogleButton onClick={() => { console.log('button clicked') }} />
+    <GoogleButton
+      onClick={() => { console.log('button clicked') }}
+    />
   ```
 
-## Preview
+## Props
 
-![https://s3.amazonaws.com/prue-cdn/react-google-button/preview.png](https://s3.amazonaws.com/prue-cdn/react-google-button/preview.png)
+### type
+##### PropType
+```js
+oneOf([ 'light', 'dark' ])
+```
+
+##### Default
+```js
+'dark'
+```
+
+##### Example
+
+```js
+  <GoogleButton
+    type="light" // can also be written as disabled={true} for clarity
+    onClick={() => { console.log('this will not run on click since it is disabled') }}
+  />
+```
+
+##### Description
+`'light'` or `'dark'` for the different google styles (defaults to `dark`)
+
+
+### disabled
+`disabled` - whether or not button is disabled
+
+##### PropType
+```js
+Boolean
+```
+
+##### Default
+```js
+false
+```
+
+##### Example
+
+```javascript
+  <GoogleButton
+    disabled // can also be written as disabled={true} for clarity
+    onClick={() => { console.log('this will not run on click since it is disabled') }}
+  />
+```
+
+### label
+##### PropType
+```js
+String
+```
+##### Default
+```js
+'Sign in with Google'
+```
+
+##### Example
+
+```javascript
+  <GoogleButton
+    label='Be Cool'
+    onClick={() => { console.log('this will not run on click since it is disabled') }}
+  />
+```
+
+##### Description
+Override the 'Sign in with Google' words with another string.
+
+**Note**: [Google's branding guidelines](https://developers.google.com/identity/branding-guidelines) states you should not to do this
+
+
 
 [npm-image]: https://img.shields.io/npm/v/react-google-button.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-google-button
