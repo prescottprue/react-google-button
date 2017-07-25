@@ -1,6 +1,7 @@
 node_modules
 **/.DS_Store
 coverage
+examples/basic/*js
 docs
 dist
 lib
