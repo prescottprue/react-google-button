@@ -19,7 +19,7 @@
     "build:umd": "webpack src/index.js dist/react-google-button.js --config webpack-development.config.js",
     "build:umd:min": "webpack -p src/index.js dist/react-google-button.min.js --config webpack-production.config.js",
     "build": "npm run clean && run-p build:lib build:umd build:umd:min && npm run build:example",
-    "serve": "yarn build && serve examples/basic",
+    "serve": "npm run build && serve examples/basic",
     "watch:umd": "npm run build:umd -- --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --progress --colors --watch",
     "watch": "npm run watch:umd",
