@@ -14,10 +14,12 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "mocha -R spec --compilers js:babel-core/register ./tests/setup.js ./tests/**/*.spec.js",
     "test:cov": "babel-node $(npm bin)/isparta cover --report lcov ./node_modules/mocha/bin/_mocha -- ./tests --recursive",
+    "build:example": "cp dist/react-google-button.min.js examples/basic",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack src/index.js dist/react-google-button.js --config webpack-development.config.js",
     "build:umd:min": "webpack -p src/index.js dist/react-google-button.min.js --config webpack-production.config.js",
-    "build": "npm run clean && npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "build": "npm run clean && run-p build:lib build:umd build:umd:min && npm run build:example",
+    "serve": "npm run build && serve examples/basic",
     "watch:umd": "npm run build:umd -- --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --progress --colors --watch",
     "watch": "npm run watch:umd",
@@ -58,7 +60,7 @@
     "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.4",
+    "babel-loader": "7.1.0",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-plugin-transform-dev-warning": "^0.1.0",
     "babel-plugin-transform-react-constant-elements": "^6.5.0",
@@ -82,10 +84,12 @@
     "eslint-plugin-standard": "^2.0.0",
     "isparta": "^4.0.0",
     "mocha": "^2.4.5",
+    "npm-run-all": "^4.0.2",
     "react": "15.4.2",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "15.4.2",
     "rimraf": "^2.5.1",
-    "webpack": "^2.6.0"
+    "serve": "^6.0.6",
+    "webpack": "^3.4.1"
   }
 }
