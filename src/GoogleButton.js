@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { GoogleIcon } from './icons'
 import { darkStyle, lightStyle, disabledStyle, hoverStyle } from './styles'
 
-export default class GoogleButton extends Component {
+export default class GoogleButton extends PureComponent {
   static propTypes = {
     label: PropTypes.string,
     disabled: PropTypes.bool,

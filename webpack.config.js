@@ -1,8 +1,8 @@
 'use strict'
-var webpack = require('webpack')
-var pkg = require('./package.json')
+const webpack = require('webpack')
+const pkg = require('./package.json')
 
-module.exports = {
+const config = {
   module: {
     rules: [
       { test: /\.js$/, loaders: [ 'babel-loader' ], exclude: [ /node_modules/ ] }
@@ -40,3 +40,16 @@ module.exports = {
     extensions: ['.js']
   }
 }
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.concat(
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        screw_ie8: true,
+        warnings: false
+      }
+    })
+  )
+}
+
+module.exports = config
