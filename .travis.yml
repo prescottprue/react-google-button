@@ -1,10 +1,9 @@
 language: node_js
 
 node_js:
-  - v6
+  - 8.6.0
 
 cache:
-  yarn: true
   directories:
     - node_modules
 
@@ -13,12 +12,7 @@ branches:
     - master
 
 script:
-  - npm run lint:fix
-
-cache:
-  yarn: true
-  directories:
-    - node_modules
+  - npm run lint
 
 addons:
   code_climate:
