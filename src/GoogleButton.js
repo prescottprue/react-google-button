@@ -25,15 +25,15 @@ export default class GoogleButton extends PureComponent {
     hovered: false
   }
 
-  getStyle = () => {
+  getStyle = (propStyles) => {
     const baseStyle = this.props.type === 'dark' ? darkStyle : lightStyle
     if (this.state.hovered) {
-      return { ...baseStyle, ...hoverStyle }
+      return { ...baseStyle, ...hoverStyle, ...propStyles }
     }
     if (this.props.disabled) {
-      return { ...baseStyle, ...disabledStyle }
+      return { ...baseStyle, ...disabledStyle, ...propStyles }
     }
-    return baseStyle
+    return { ...baseStyle, ...propStyles }
   }
 
   mouseOver = () => {
@@ -55,13 +55,13 @@ export default class GoogleButton extends PureComponent {
   }
 
   render () {
-    const { label } = this.props
+    const { label, style, ...otherProps } = this.props
 
     return (
       <div
-        {...this.props}
+        {...otherProps}
         onClick={this.click}
-        style={this.getStyle()}
+        style={this.getStyle(style)}
         onMouseOver={this.mouseOver}
         onMouseOut={this.mouseOut}
       >
