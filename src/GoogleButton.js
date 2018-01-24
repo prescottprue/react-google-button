@@ -8,7 +8,8 @@ export default class GoogleButton extends PureComponent {
     label: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
-    type: PropTypes.oneOf(['light', 'dark'])
+    type: PropTypes.oneOf(['light', 'dark']),
+    style: PropTypes.object
   }
 
   static defaultProps = {

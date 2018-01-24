@@ -1,10 +1,9 @@
 import * as React from 'react';
 
-interface GoogleButtonProps {
+interface GoogleButtonProps extends HTMLAttributes<HTMLDivElement> {
   label?: string;
   type?: "dark" | "light";
   disabled?: boolean;
-  style?: object;
 }
 
 /**
