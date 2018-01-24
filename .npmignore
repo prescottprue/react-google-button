@@ -1,3 +1,17 @@
 node_modules
 DS_Store
 **/.DS_Store
+examples
+tests
+coverage
+.istanbul.yml
+.babelrc
+SUMMARY.md
+webpack.config.js
+.eslintignore
+.eslintrc
+.github
+.travis.yml
+CODE_OF_CONDUCT.md
+CHANGELOG.md
+.codeclimate.yml

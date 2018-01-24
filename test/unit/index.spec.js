@@ -20,10 +20,7 @@ describe('react-google-button Library', () => {
 
     describe('Default Props', () => {
       beforeEach(() => {
-        _component = shallow(
-          <GoogleButton
-          />
-        )
+        _component = shallow(<GoogleButton />)
       })
       it('Renders div', () => {
         const firstDiv = _component.find('div')
@@ -37,10 +34,10 @@ describe('react-google-button Library', () => {
 
       it('Applies styles', () => {
         const firstDiv = _component.find('div')
-        expect(firstDiv.first())
-          .to
-          .have
-          .style('background-color', defaults.backgroundColor)
+        expect(firstDiv.first()).to.have.style(
+          'background-color',
+          defaults.backgroundColor
+        )
       })
     })
 
@@ -48,11 +45,7 @@ describe('react-google-button Library', () => {
       const customLabel = 'Custom Label'
 
       beforeEach(() => {
-        _component = shallow(
-          <GoogleButton
-            label={customLabel}
-          />
-        )
+        _component = shallow(<GoogleButton label={customLabel} />)
       })
 
       it('Renders div', () => {
@@ -68,11 +61,7 @@ describe('react-google-button Library', () => {
 
     describe('Disabled', () => {
       beforeEach(() => {
-        _component = shallow(
-          <GoogleButton
-            disabled
-          />
-        )
+        _component = shallow(<GoogleButton disabled />)
       })
 
       it('Renders div', () => {
@@ -82,10 +71,10 @@ describe('react-google-button Library', () => {
 
       it('Applies background color', () => {
         const firstDiv = _component.find('div')
-        expect(firstDiv.first())
-          .to
-          .have
-          .style('background-color', disabledStyle.backgroundColor)
+        expect(firstDiv.first()).to.have.style(
+          'background-color',
+          disabledStyle.backgroundColor
+        )
       })
     })
   })
