@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 interface GoogleButtonProps {
+  onClick: () => any;
   label?: string;
   type?: "dark" | "light";
   disabled?: boolean;
