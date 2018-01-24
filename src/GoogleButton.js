@@ -8,10 +8,7 @@ export default class GoogleButton extends PureComponent {
     label: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
-    type: PropTypes.oneOf([
-      'light',
-      'dark'
-    ])
+    type: PropTypes.oneOf(['light', 'dark'])
   }
 
   static defaultProps = {
@@ -25,7 +22,7 @@ export default class GoogleButton extends PureComponent {
     hovered: false
   }
 
-  getStyle = (propStyles) => {
+  getStyle = propStyles => {
     const baseStyle = this.props.type === 'dark' ? darkStyle : lightStyle
     if (this.state.hovered) {
       return { ...baseStyle, ...hoverStyle, ...propStyles }
@@ -48,13 +45,13 @@ export default class GoogleButton extends PureComponent {
     }
   }
 
-  click = (e) => {
+  click = e => {
     if (!this.props.disabled) {
       this.props.onClick(e)
     }
   }
 
-  render () {
+  render() {
     const { label, style, ...otherProps } = this.props
 
     return (

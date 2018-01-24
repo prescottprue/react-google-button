@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-const chai = global.chai = require('chai')
-const expect = global.expect = chai.expect
-const should = global.should = chai.should()
+const chai = (global.chai = require('chai'))
+const expect = (global.expect = chai.expect)
+const should = (global.should = chai.should())
 const chaiEnzyme = require('chai-enzyme')
 // var Promise = require('es6-promise').Promise
 // global.Promise = Promise

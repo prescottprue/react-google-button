@@ -5,16 +5,15 @@ const pkg = require('./package.json')
 const config = {
   module: {
     rules: [
-      { test: /\.js$/, loaders: [ 'babel-loader' ], exclude: [ /node_modules/ ] }
+      { test: /\.js$/, loaders: ['babel-loader'], exclude: [/node_modules/] }
     ]
   },
   plugins: [
-    new webpack.BannerPlugin(
-      {
-        banner: 'react-google-button.js v' + pkg.version + ' | (c) prescottprue',
-        raw: false,
-        entryOnly: true
-      })
+    new webpack.BannerPlugin({
+      banner: 'react-google-button.js v' + pkg.version + ' | (c) prescottprue',
+      raw: false,
+      entryOnly: true
+    })
   ],
   externals: {
     react: {
@@ -29,13 +28,6 @@ const config = {
       amd: 'prop-types',
       root: 'PropTypes'
     }
-    // Uncomment to not include prop-types in browser build
-    // 'prop-types': {
-    //   commonjs: 'prop-types',
-    //   commonjs2: 'prop-types',
-    //   amd: 'prop-types',
-    //   root: 'PropTypes'
-    // }
   },
   output: {
     library: 'ReactGoogleButton',
@@ -50,6 +42,9 @@ const config = {
 if (process.env.NODE_ENV === 'production') {
   config.plugins.concat(
     new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false
+      },
       compressor: {
         screw_ie8: true,
         warnings: false
