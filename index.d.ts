@@ -4,6 +4,7 @@ interface GoogleButtonProps {
   label?: string;
   type?: "dark" | "light";
   disabled?: boolean;
+  style?: object;
 }
 
 /**
