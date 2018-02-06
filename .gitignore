@@ -5,4 +5,5 @@ examples/basic/*js
 docs
 dist
 lib
+es
 *.log
