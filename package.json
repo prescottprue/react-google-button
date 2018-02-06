@@ -1,6 +1,6 @@
 {
   "name": "react-google-button",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
@@ -18,7 +18,7 @@
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:umd": "cross-env NODE_ENV=development BABEL_ENV=commonjs webpack src/index.js dist/react-google-button.js --config webpack.config.js",
     "build:umd:min": "cross-env NODE_ENV=production BABEL_ENV=commonjs webpack -p src/index.js dist/react-google-button.min.js --config webpack.config.js",
-    "build": "npm run clean && npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:example",
+    "build": "npm run clean && npm run build:es && npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:example",
     "serve": "npm run build && serve examples/basic",
     "watch:umd": "npm run build:umd -- --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --watch",
