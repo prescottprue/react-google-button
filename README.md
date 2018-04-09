@@ -21,17 +21,17 @@ react-google-button is universal, so it can be used client-side or server-side.
 
 2. Import `GoogleButton` from `react-google-button`:
 
-  ```javascript
-  import GoogleButton from 'react-google-button'
-  ```
+    ```javascript
+    import GoogleButton from 'react-google-button'
+    ```
 
 3. Use `GoogleButton` component:
 
-  ```javascript
-  <GoogleButton
-    onClick={() => { console.log('Google button clicked') }}
-  />
-  ```
+    ```javascript
+    <GoogleButton
+      onClick={() => { console.log('Google button clicked') }}
+    />
+    ```
 
 ## Props
 
