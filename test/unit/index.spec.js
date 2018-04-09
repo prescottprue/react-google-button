@@ -15,6 +15,7 @@ describe('react-google-button Library', () => {
   describe('exports a component', () => {
     expect(GoogleButton).to.exist
   })
+
   describe('Component', () => {
     let _component
 

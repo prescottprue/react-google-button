@@ -21,17 +21,17 @@ react-google-button is universal, so it can be used client-side or server-side.
 
 2. Import `GoogleButton` from `react-google-button`:
 
-  ```javascript
-  import GoogleButton from 'react-google-button'
-  ```
+    ```javascript
+    import GoogleButton from 'react-google-button'
+    ```
 
 3. Use `GoogleButton` component:
 
-  ```javascript
+    ```javascript
     <GoogleButton
-      onClick={() => { console.log('button clicked') }}
+      onClick={() => { console.log('Google button clicked') }}
     />
-  ```
+    ```
 
 ## Props
 
@@ -49,10 +49,10 @@ oneOf([ 'light', 'dark' ])
 ##### Example
 
 ```js
-  <GoogleButton
-    type="light" // can also be written as disabled={true} for clarity
-    onClick={() => { console.log('this will not run on click since it is disabled') }}
-  />
+<GoogleButton
+  type="light" // can also be written as disabled={true} for clarity
+  onClick={() => { console.log('Google button clicked') }}
+/>
 ```
 
 ##### Description
@@ -75,10 +75,10 @@ false
 ##### Example
 
 ```javascript
-  <GoogleButton
-    disabled // can also be written as disabled={true} for clarity
-    onClick={() => { console.log('this will not run on click since it is disabled') }}
-  />
+<GoogleButton
+  disabled // can also be written as disabled={true} for clarity
+  onClick={() => { console.log('this will not run on click since it is disabled') }}
+/>
 ```
 
 ### label
@@ -94,10 +94,10 @@ String
 ##### Example
 
 ```javascript
-  <GoogleButton
-    label='Be Cool'
-    onClick={() => { console.log('this will not run on click since it is disabled') }}
-  />
+<GoogleButton
+  label='Be Cool'
+  onClick={() => { console.log('Google button clicked') }}
+/>
 ```
 
 ##### Description
