@@ -1,19 +1,25 @@
+sudo: false
+
 language: node_js
 
 node_js:
-  - 8
-  - 9
+  - 6 # Maintenance
+  - 8 # Active
+  - 10 # Current release
 
 cache:
+  bundler: true
   directories:
-    - node_modules
+    - $HOME/.npm
 
 branches:
   only:
     - master
+    - next
 
 script:
   - npm run lint
+  - npm run test:cov
 
 addons:
   code_climate:
@@ -22,3 +28,20 @@ addons:
 after_success:
   - npm install -g codeclimate-test-reporter
   - codeclimate-test-reporter < coverage/*/lcov.info
+
+deploy:
+  - provider: npm
+    skip_cleanup: true
+    email: $NPM_EMAIL
+    api_key: $NPM_TOKEN
+    on:
+      node: '10'
+      branch: 'master'
+  - provider: npm
+    skip_cleanup: true
+    email: $NPM_EMAIL
+    api_key: $NPM_TOKEN
+    tag: next
+    on:
+      node: '10'
+      branch: 'next'
