@@ -1,6 +1,6 @@
 {
   "name": "react-google-button",
-  "version": "0.6.0",
+  "version": "0.6.0-alpha",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
