@@ -7,6 +7,7 @@ export default class GoogleButton extends PureComponent {
   static propTypes = {
     label: PropTypes.string,
     disabled: PropTypes.bool,
+    tabIndex: PropTypes.number,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['light', 'dark']),
     style: PropTypes.object
@@ -16,7 +17,7 @@ export default class GoogleButton extends PureComponent {
     label: 'Sign in with Google',
     disabled: false,
     type: 'dark',
-    tabindex: 0,
+    tabIndex: 0,
     onClick: () => {}
   }
 
