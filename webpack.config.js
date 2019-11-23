@@ -1,5 +1,6 @@
 'use strict'
 const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const pkg = require('./package.json')
 
 const config = {
@@ -40,17 +41,21 @@ const config = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  config.plugins.concat(
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false
-      },
-      compressor: {
-        screw_ie8: true,
-        warnings: false
-      }
-    })
-  )
+  config.optimization = {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true
+        },
+        sourceMap: true
+      })
+    ]
+  }
 }
 
 module.exports = config

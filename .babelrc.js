@@ -1,17 +1,22 @@
 module.exports = {
   presets: [
-    ['env', {
-      modules: process.env.BABEL_ENV === 'es'
-        ? false
-        : 'commonjs'
-    }],
-    'react'
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": 52,
+          "browsers": [
+            "last 2 versions",
+            "safari >= 7"
+          ]
+        }
+      }
+    ]
   ],
   plugins: [
-    'transform-object-rest-spread',
-    'transform-class-properties',
-    'transform-export-extensions',
-    'transform-object-assign'
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-class-properties"
   ],
   env: {
     test: {
