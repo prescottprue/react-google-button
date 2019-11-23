@@ -13,6 +13,7 @@ module.exports = {
     semi: [ 2, 'never' ],
     'no-console': 'error',
     'react/jsx-no-bind': [ 2, { allowArrowFunctions: true } ],
+    'react/jsx-handler-names': 0,
     'prettier/prettier': 
     [ 'error', {
       singleQuote: true,
