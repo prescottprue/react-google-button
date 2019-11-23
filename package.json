@@ -12,7 +12,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --single-quote --no-semi --trailing-comma none --write \"src/**/*.js\" \"test/**/*.js\" webpack.config.js",
     "test": "mocha -R spec ./test/unit/**",
-    "test:cov": "nyc npm run test",
+    "test:cov": "nyc --reporter=lcov --reporter=html npm run test",
     "build:example": "cp dist/react-google-button.min.js examples/basic",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",

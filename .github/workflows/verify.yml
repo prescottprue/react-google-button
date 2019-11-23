@@ -1,4 +1,4 @@
-name: NPM Package Publish
+name: Verify
 
 on: [pull_request]
 
