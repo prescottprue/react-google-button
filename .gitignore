@@ -7,3 +7,4 @@ dist
 lib
 es
 *.log
+.nyc_output

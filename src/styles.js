@@ -11,7 +11,8 @@ const baseStyle = {
   borderRadius: '1px',
   transition: 'background-color .218s, border-color .218s, box-shadow .218s',
   fontFamily: 'Roboto,arial,sans-serif',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  userSelect: 'none'
 }
 
 export const darkStyle = {
