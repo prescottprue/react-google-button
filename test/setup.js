@@ -2,7 +2,11 @@
 const chai = (global.chai = require('chai'))
 const expect = (global.expect = chai.expect)
 const should = (global.should = chai.should())
+const enzyme = require('enzyme')
 const chaiEnzyme = require('chai-enzyme')
+const Adapter = require('enzyme-adapter-react-16')
+
+enzyme.configure({ adapter: new Adapter() })
 // var Promise = require('es6-promise').Promise
 // global.Promise = Promise
 

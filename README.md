@@ -15,7 +15,7 @@
 
 ## Getting Started
 
-react-google-button is universal, so it can be used client-side or server-side.
+`react-google-button` is universal, so it can be used client-side or server-side.
 
 1. Install through: `npm install --save react-google-button`
 
@@ -106,6 +106,21 @@ Override the 'Sign in with Google' words with another string.
 **Note**: [Google's branding guidelines](https://developers.google.com/identity/branding-guidelines) states you should not to do this
 
 
+## Builds
+
+Most commonly people consume `react-google-button` as a [CommonJS module](http://webpack.github.io/docs/commonjs.html). This module is what you get when you import redux in a Webpack, Browserify, or a Node environment.
+
+If you don't use a module bundler, it's also fine. The `react-google-button` npm package includes precompiled production and development [UMD builds](https://github.com/umdjs/umd) in the [dist folder](https://unpkg.com/react-google-button@latest/dist/). They can be used directly without a bundler and are thus compatible with many popular JavaScript module loaders and environments. For example, you can drop a UMD build as a `<script>` tag on the page. The UMD builds make Redux Firestore available as a `window.ReduxFirestore` global variable.
+
+It can be imported like so:
+
+```html
+<script src="../node_modules/react-google-button/dist/react-google-button.min.js"></script>
+<!-- or through cdn: <script src="https://unpkg.com/react-google-button@latest/dist/react-google-button.min.js"></script> -->
+<script>console.log('redux firestore:', window.ReactGoogleButton)</script>
+```
+
+Note: In an effort to keep things simple, the wording from this explanation was modeled after [the installation section of the Redux Docs](https://redux.js.org/#installation).
 
 [npm-image]: https://img.shields.io/npm/v/react-google-button.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-google-button
