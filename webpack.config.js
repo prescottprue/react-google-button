@@ -9,6 +9,7 @@ const config = {
       { test: /\.js$/, loaders: ['babel-loader'], exclude: [/node_modules/] }
     ]
   },
+  entry: './src/index.js',
   plugins: [
     new webpack.BannerPlugin({
       banner: 'react-google-button.js v' + pkg.version + ' | (c) prescottprue',
@@ -31,6 +32,9 @@ const config = {
     }
   },
   output: {
+    filename: `react-google-button${
+      process.env.NODE_ENV === 'production' ? '.min' : ''
+    }.js`,
     library: 'ReactGoogleButton',
     libraryTarget: 'umd',
     publicPath: '/dist/'
