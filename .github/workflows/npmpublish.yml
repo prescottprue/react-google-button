@@ -38,6 +38,23 @@ jobs:
       - name: Run Unit Tests + Coverage
         run: yarn test:cov
 
+      - name: Build
+        run: yarn build
+
+      - name: Archive UMD Build Artifact
+        uses: actions/upload-artifact@master
+        if: success()
+        with:
+          name: umd-build
+          path: dist
+
+      - name: Archive ES Build Artifact
+        uses: actions/upload-artifact@master
+        if: success()
+        with:
+          name: es-build
+          path: es
+
       - name: Upload Coverage + Climate
         if: success()
         env:
@@ -62,11 +79,26 @@ jobs:
         uses: technote-space/package-version-check-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+
+      # Setup dependency caching
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        env:
+          CI: true
+        run: |
+          yarn install --frozen-lockfile
 
       - name: Publish To NPM
         run: npm publish $(if [ ${{github.ref}} == 'refs/heads/master' ]; then echo '--tag next';fi;)
@@ -91,6 +123,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   release:
+    needs: publish-npm
     name: Create Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
@@ -104,7 +137,8 @@ jobs:
 
       - name: Get package version
         id: package-info
-        run: echo "::set-output name=version::$(node -pe "require('./package.json').version")
+        run:
+          export VERSION=$(node -pe "require('./package.json').version") && echo echo "::set-output name=version::$VERSION"
 
       - name: Create Release
         id: create_release

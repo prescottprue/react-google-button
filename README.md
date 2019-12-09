@@ -7,6 +7,8 @@
 [![License][license-image]][license-url]
 [![Code Style][code-style-image]][code-style-url]
 
+> Simple Google sign in button for React that follows Google's style guidelines (https://developers.google.com/identity/sign-in/web/build-button)
+
 ## [Codepen Demo](https://codepen.io/prescottprue/pen/NjmeKM)
 
 ## Rendered Preview
