@@ -1,7 +1,6 @@
-languages:
-  JavaScript: true
+version: 2
 
-exclude_paths:
+exclude_patterns:
 - "lib/**"
 - "test/**"
 - "example/**"
@@ -9,17 +8,3 @@ exclude_paths:
 - "LICENSE.md"
 - "README.md"
 - "package.json"
-
-engines:
-  duplication:
-    enabled: true
-    exclude_fingerprints:
-    duplication:
-      enabled: true
-      config:
-        languages:
-          - javascript
-    eslint:
-      enabled: true
-    fixme:
-      enabled: true

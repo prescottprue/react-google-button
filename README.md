@@ -1,7 +1,7 @@
 # react-google-button
 
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-status-image]][build-status-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][climate-image]][climate-url]
 [![License][license-image]][license-url]
@@ -126,6 +126,10 @@ Note: In an effort to keep things simple, the wording from this explanation was 
 
 [npm-image]: https://img.shields.io/npm/v/react-google-button.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-google-button
+[build-status-image]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fprescottprue%2Freact-google-button%2Fbadge&label=build&style=flat-square
+[build-status-image-next]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fprescottprue%2Freact-google-button%2Fbadge%3Fref%3Dnext&label=build&style=flat-square
+[build-status-image-og]: https://github.com/prescottprue/react-google-button/workflows/publish.yml/badge.svg
+[build-status-url]: https://github.com/prescottprue/react-google-button/workflows
 [travis-image]: https://img.shields.io/travis/prescottprue/react-google-button/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/prescottprue/react-google-button
 [daviddm-image]: https://img.shields.io/david/prescottprue/react-google-button.svg?style=flat-square

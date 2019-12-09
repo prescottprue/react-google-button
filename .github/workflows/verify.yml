@@ -27,12 +27,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Get package version
-        id: package-info
-        run: |
-          export VERSION=$(node -pe "require('./package.json').version")
-          echo "::set-output name=version::$VERSION"
-
       - name: Install Dependencies
         env:
           CI: true
