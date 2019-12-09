@@ -1,6 +1,6 @@
 'use strict'
 const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const pkg = require('./package.json')
 
 const config = {
@@ -47,11 +47,10 @@ const config = {
 if (process.env.NODE_ENV === 'production') {
   config.optimization = {
     minimizer: [
-      // we specify a custom UglifyJsPlugin here to get source maps in production
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true,
-        uglifyOptions: {
+        terserOptions: {
           compress: false,
           ecma: 6,
           mangle: true

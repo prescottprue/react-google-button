@@ -7,7 +7,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout Code
+        uses: actions/checkout@v1
+
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -33,6 +35,9 @@ jobs:
  
       - name: Run Unit Tests + Coverage
         run: yarn test:cov
+
+      - name: Build
+        run: yarn build
 
       - name: Upload Coverage + Climate
         if: success()

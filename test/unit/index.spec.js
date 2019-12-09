@@ -78,5 +78,50 @@ describe('react-google-button Library', () => {
         )
       })
     })
+
+    describe('onClick', () => {
+      let clickSpy
+      beforeEach(() => {
+        clickSpy = sinon.spy()
+        _component = shallow(<GoogleButton onClick={clickSpy} />)
+      })
+
+      it('Calls onClick prop when clicked', () => {
+        _component.simulate('click')
+        expect(clickSpy).to.have.been.calledOnce
+      })
+    })
+
+    describe('Hover', () => {
+      beforeEach(() => {
+        _component = shallow(<GoogleButton />)
+      })
+
+      it('Sets hover style on hover', () => {
+        _component.simulate('mouseover')
+        const firstDiv = _component.find('div')
+        expect(firstDiv.first()).to.have.style(
+          'box-shadow',
+          '0 0 3px 3px rgba(66,133,244,.3)'
+        )
+        expect(firstDiv.first()).to.have.style(
+          'transition',
+          'background-color .218s, border-color .218s, box-shadow .218s'
+        )
+      })
+
+      it('Sets original style when mouse leave', () => {
+        _component.simulate('mouseout')
+        const firstDiv = _component.find('div')
+        expect(firstDiv.first()).to.have.style(
+          'background-color',
+          defaults.backgroundColor
+        )
+        expect(firstDiv.first()).to.have.style(
+          'background-color',
+          defaults.backgroundColor
+        )
+      })
+    })
   })
 })
