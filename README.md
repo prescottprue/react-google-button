@@ -52,7 +52,7 @@ oneOf([ 'light', 'dark' ])
 
 ```js
 <GoogleButton
-  type="light" // can also be written as disabled={true} for clarity
+  type="light" // can be light or dark
   onClick={() => { console.log('Google button clicked') }}
 />
 ```
