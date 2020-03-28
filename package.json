@@ -1,6 +1,6 @@
 {
   "name": "react-google-button",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
@@ -22,8 +22,7 @@
     "watch:umd": "npm run build:umd -- --progress --colors --watch",
     "watch:lib": "npm run build:lib -- --watch",
     "watch:es": "npm run build:es -- --watch",
-    "watch": "npm run watch:es",
-    "prepublishOnly": "npm run clean && npm run lint:fix && npm run build && npm run test:cov"
+    "watch": "npm run watch:es"
   },
   "repository": {
     "type": "git",
@@ -33,7 +32,6 @@
     "react",
     "google",
     "button",
-    "signin",
     "authentication"
   ],
   "author": "prescottprue",
@@ -55,29 +53,29 @@
     "react": "*"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-export-default-from": "^7.7.4",
-    "@babel/plugin-transform-modules-commonjs": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.7.4",
-    "@babel/register": "^7.7.4",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "chai-enzyme": "1.0.0-beta.1",
     "cheerio": "^1.0.0-rc.3",
-    "cross-env": "^6.0.3",
-    "enzyme": "^3.10.0",
+    "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "eslint": "^6.7.0",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsdoc": "^18.1.4",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsdoc": "^22.1.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.0",
@@ -85,22 +83,31 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-standard": "^4.0.0",
     "http-server": "^0.12.0",
-    "husky": "^3.1.0",
-    "mocha": "^6.2.2",
-    "nyc": "^14.1.1",
-    "prettier": "^1.19.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.9",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.2",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "rimraf": "^3.0.0",
-    "sinon": "^7.5.0",
+    "sinon": "^9.0.1",
     "sinon-chai": "^3.3.0",
-    "terser-webpack-plugin": "^2.2.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-commit": "int-staged"
     }
+  },
+  "lint-staged": {
+    "*.{json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
   }
 }
