@@ -2,8 +2,7 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][build-status-image]][build-status-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Code Climate][climate-image]][climate-url]
+[![Coverage][coverage-image]][coverage-url]
 [![License][license-image]][license-url]
 [![Code Style][code-style-image]][code-style-url]
 
@@ -126,17 +125,9 @@ Note: In an effort to keep things simple, the wording from this explanation was 
 
 [npm-image]: https://img.shields.io/npm/v/react-google-button.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-google-button
-[build-status-image]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fprescottprue%2Freact-google-button%2Fbadge&label=build&style=flat-square
-[build-status-image-next]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fprescottprue%2Freact-google-button%2Fbadge%3Fref%3Dnext&label=build&style=flat-square
-[build-status-image-og]: https://github.com/prescottprue/react-google-button/workflows/publish.yml/badge.svg
-[build-status-url]: https://github.com/prescottprue/react-google-button/workflows
-[travis-image]: https://img.shields.io/travis/prescottprue/react-google-button/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/prescottprue/react-google-button
-[daviddm-image]: https://img.shields.io/david/prescottprue/react-google-button.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/prescottprue/react-google-button
-[climate-image]: https://img.shields.io/codeclimate/github/prescottprue/react-google-button.svg?style=flat-square
-[climate-url]: https://codeclimate.com/github/prescottprue/react-google-button
-[coverage-image]: https://img.shields.io/codeclimate/coverage/github/prescottprue/react-google-button.svg?style=flat-square
+[build-status-image]: https://img.shields.io/github/workflow/status/prescottprue/react-google-button/NPM%20Package%20Publish?style=flat-square&logo=github
+[build-status-url]: https://github.com/prescottprue/react-google-button/actions
+[coverage-image]: https://img.shields.io/codeclimate/coverage/github/prescottprue/react-google-button.svg?style=flat-square&logo=codecov
 [coverage-url]: https://codeclimate.com/github/prescottprue/react-google-button
 [license-image]: https://img.shields.io/npm/l/react-google-button.svg?style=flat-square
 [license-url]: https://github.com/prescottprue/react-google-button/blob/master/LICENSE
