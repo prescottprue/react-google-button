@@ -3,7 +3,23 @@ import PropTypes from 'prop-types'
 import { GoogleIcon } from './icons'
 import { darkStyle, lightStyle, disabledStyle, hoverStyle } from './styles'
 
-export default class GoogleButton extends PureComponent {
+type GoogleButtonProps = {
+  label: string,
+  disabled: boolean,
+  tabIndex: number,
+  onClick: (event?: React.MouseEvent<HTMLDivElement, MouseEvent>) => any,
+  type: 'light' | 'dark',
+  style: object
+}
+
+type GoogleButtonState = {
+  hovered: boolean
+}
+
+export default class GoogleButton extends PureComponent<GoogleButtonProps, GoogleButtonState> {
+  constructor(props: GoogleButtonProps) {
+    super(props)
+  }
   static propTypes = {
     label: PropTypes.string,
     disabled: PropTypes.bool,
@@ -24,16 +40,16 @@ export default class GoogleButton extends PureComponent {
   state = {
     hovered: false
   }
-
-  getStyle = propStyles => {
+  
+  getStyle = (): React.CSSProperties => {
     const baseStyle = this.props.type === 'dark' ? darkStyle : lightStyle
     if (this.state.hovered) {
-      return { ...baseStyle, ...hoverStyle, ...propStyles }
+      return { ...baseStyle, ...hoverStyle, ...this.props.style }
     }
     if (this.props.disabled) {
-      return { ...baseStyle, ...disabledStyle, ...propStyles }
+      return { ...baseStyle, ...disabledStyle, ...this.props.style }
     }
-    return { ...baseStyle, ...propStyles }
+    return { ...baseStyle, ...this.props.style }
   }
 
   mouseOver = () => {
@@ -48,21 +64,20 @@ export default class GoogleButton extends PureComponent {
     }
   }
 
-  click = e => {
-    if (!this.props.disabled) {
+  click = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!this.props.disabled && this.props.onClick) {
       this.props.onClick(e)
     }
   }
 
   render() {
-    const { label, style, ...otherProps } = this.props
-
+    const { label, style, type, disabled, ...otherProps } = this.props
     return (
       <div
         {...otherProps}
         role="button"
         onClick={this.click}
-        style={this.getStyle(style)}
+        style={this.getStyle()}
         onMouseOver={this.mouseOver}
         onMouseOut={this.mouseOut}
       >

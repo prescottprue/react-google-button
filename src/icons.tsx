@@ -1,6 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { iconStyle, disabledIconStyle, svgStyle } from './styles'
+
+const svgStyle = {
+  width: '48px',
+  height: '48px',
+  display: 'block'
+}
 
 const darkSvg = (
   <svg
@@ -258,6 +263,24 @@ const disabledSvg = (
     </g>
   </svg>
 )
+
+const iconStyle = {
+  width: '48px',
+  height: '48px',
+  textAlign: 'center' as 'center',
+  verticalAlign: 'center',
+  display: 'block',
+  marginTop: '1px',
+  marginLeft: '1px',
+  float: 'left' as 'left',
+  backgroundColor: '#fff',
+  borderRadius: '1px',
+  whiteSpace: 'nowrap' as 'nowrap'
+}
+
+const disabledIconStyle = {
+  backgroundColor: 'transparent'
+}
 
 export const GoogleIcon = ({ disabled, type }) => (
   <div style={!disabled ? iconStyle : { ...iconStyle, ...disabledIconStyle }}>
