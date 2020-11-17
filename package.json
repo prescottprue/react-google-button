@@ -1,7 +1,7 @@
 {
   "name": "react-google-button",
   "version": "0.7.1",
-  "main": "lib/index.js",
+  "main": "es/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "unpkg": "dist/react-google-button.min.js",
