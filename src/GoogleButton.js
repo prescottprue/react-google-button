@@ -13,15 +13,17 @@ export default function GoogleButton({
 }) {
   const [hovered, setHovered] = useState(false)
   const mouseOver = () => {
-    if (!this.props.disabled) {
+    if (!disabled) {
       setHovered(true)
     }
   }
+
   const mouseOut = () => {
-    if (!this.props.disabled) {
+    if (!disabled) {
       setHovered(false)
     }
   }
+
   const getStyle = () => {
     const baseStyle = type === 'dark' ? darkStyle : lightStyle
     if (hovered) {
