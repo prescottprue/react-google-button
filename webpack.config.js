@@ -6,7 +6,7 @@ const pkg = require('./package.json')
 const config = {
   module: {
     rules: [
-      { test: /\.js$/, loaders: ['babel-loader'], exclude: [/node_modules/] }
+      { test: /\.js$/, loader: 'babel-loader', exclude: [/node_modules/] }
     ]
   },
   entry: './src/index.js',
