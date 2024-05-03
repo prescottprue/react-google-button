@@ -52,7 +52,7 @@
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": ">= 16.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.5",

@@ -6795,7 +6795,7 @@ __metadata:
     webpack: "npm:^5.91.0"
     webpack-cli: "npm:^5.1.4"
   peerDependencies:
-    react: "*"
+    react: ">= 16.8.0"
   languageName: unknown
   linkType: soft
 
