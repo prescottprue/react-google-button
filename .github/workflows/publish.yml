@@ -21,6 +21,10 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'yarn'
 
+      - name: Configure package manager
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' ${{ secrets.NPM_TOKEN }}
+
       - name: Install Dependencies
         run: yarn install --immutable
 
@@ -34,7 +38,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_REF: ${{ github.ref }}
-        run: npm publish $(if [ "$GITHUB_REF" != 'refs/heads/master' ]; then echo '--tag next';fi;)
+        run: npm publish $(if [ "$GITHUB_REF" != 'refs/heads/main' ]; then echo '--tag next';fi;)
 
       - name: Get package version
         id: package-info
