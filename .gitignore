@@ -1,4 +1,13 @@
+# package directories
 node_modules
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 **/.DS_Store
 coverage
 examples/basic/*js
