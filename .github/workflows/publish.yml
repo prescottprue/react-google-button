@@ -14,18 +14,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node 12
+      - name: Setup Node 20
         uses: actions/setup-node@v4
         with:
-          node-version: 12
+          node-version: 20
           registry-url: https://registry.npmjs.org/
           cache: 'yarn'
 
       - name: Install Dependencies
-        env:
-          CI: true
-        run: |
-          yarn install --immutable
+        run: yarn install --immutable
 
       - name: Run Unit Tests + Coverage
         run: yarn test:cov
@@ -60,11 +57,6 @@ jobs:
           prerelease: ${{ github.ref }} == 'refs/heads/next'
 
       - name: Upload Coverage
-        if: success()
-        env:
-          CI: true
-          CODE_COV: ${{ secrets.CODE_COV }}
-        run: |
-          # Upload to Code Cover. Curl used in place of codecov/codecov-action
-          # due to long build time. See https://github.com/codecov/codecov-action/issues/21
-          curl -s https://codecov.io/bash | bash -s -- -t $CODE_COV
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODE_COV }}
