@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/prescottprue/react-google-button",
   "dependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.8.1"
   },
   "peerDependencies": {
     "react": "*"
@@ -100,7 +100,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "int-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -110,5 +110,6 @@
     "*.{js,ts}": [
       "eslint --fix"
     ]
-  }
+  },
+  "packageManager": "yarn@4.2.1"
 }

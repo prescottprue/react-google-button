@@ -259,7 +259,7 @@ const disabledSvg = (
   </svg>
 )
 
-export const GoogleIcon = ({ disabled, type }) => (
+export const GoogleIcon = ({ disabled, type = 'dark' }) => (
   <div style={!disabled ? iconStyle : { ...iconStyle, ...disabledIconStyle }}>
     {!disabled ? (type === 'dark' ? darkSvg : lightSvg) : disabledSvg}
   </div>
@@ -268,8 +268,4 @@ export const GoogleIcon = ({ disabled, type }) => (
 GoogleIcon.propTypes = {
   disabled: PropTypes.bool,
   type: PropTypes.oneOf(['light', 'dark'])
-}
-
-GoogleIcon.defaultProps = {
-  type: 'dark'
 }
