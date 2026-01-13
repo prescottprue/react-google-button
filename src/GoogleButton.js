@@ -26,11 +26,11 @@ export default function GoogleButton({
 
   const getStyle = () => {
     const baseStyle = type === 'dark' ? darkStyle : lightStyle
-    if (hovered) {
-      return { ...baseStyle, ...hoverStyle, ...style }
-    }
     if (disabled) {
       return { ...baseStyle, ...disabledStyle, ...style }
+    }
+    if (hovered) {
+      return { ...baseStyle, ...hoverStyle, ...style }
     }
     return { ...baseStyle, ...style }
   }
